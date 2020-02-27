@@ -12,7 +12,7 @@ import java.util.Scanner;
  * @author aluno
  */
 public class MenuAlmoxarifado extends javax.swing.JFrame {
-    int max = 10;
+    int max = 10, i = 0;
     Produto produtos[] = new Produto[max];
     Scanner entrada = new Scanner(System.in);
     /**
@@ -227,8 +227,13 @@ public class MenuAlmoxarifado extends javax.swing.JFrame {
         botaoBaixar.setEnabled(false);
         botaoConfirmar.setEnabled(true);
         
-        String nome = campoProduto.getText();
-        int quant_estoque = Integer.parseInt(campoQuantidade.getText());
+        if(i > max){
+            String nome = campoProduto.getText();
+            int quant_estoque = Integer.parseInt(campoQuantidade.getText());
+            
+            i++;
+        }
+        
     }//GEN-LAST:event_botaoCadastrarActionPerformed
 
     private void botaoAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoAdicionarActionPerformed
